@@ -1,5 +1,6 @@
 # YOLO-HRNet-on-RumexWeeds
 This is the repository of YOLO-HRNet single-class implementation on RumexWeeds Dataset.
+![YOLO_HRNet.png](YOLO_HRNet.png)
 
 # Usage
 ## Environment
