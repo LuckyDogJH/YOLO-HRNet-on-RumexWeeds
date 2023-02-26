@@ -13,7 +13,7 @@ Please download [RumexWeeds Dataset](https://figshare.com/s/287873a5ac9297f181cc
 ```
 python3 convert_XML_to_COCO_in_YOLO.py --root=$your-data-path$ --target_dir='../RumexWeeds_root_YOLOtxt'
 ```
-Please also change the train/val/test dataset info in `DataInfo.yaml`
+Please also change the train/val/test dataset information in `DataInfo.yaml`
 
 ## Training and Testing
 ### Training on RumexWeeds dataset
