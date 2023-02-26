@@ -26,6 +26,7 @@ please put the trained model named `best.pt` under `./saved_model` folder
 ```
 python3 Test.py --roi_output_size=16
 ```
+You can download trained model from https://drive.google.com/drive/folders/1aLnNtIUV9C_HlPrJbyoQm6jGlTiPHmgW?usp=share_link
 
 # Results Visualization
 
