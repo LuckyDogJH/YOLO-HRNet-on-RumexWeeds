@@ -32,5 +32,5 @@ You can download trained model from https://drive.google.com/drive/folders/1aLnN
 `To Do`
 
 # Code References
-* YOLOv5: https://github.com/ultralytics/yolov5
+* [YOLOv5](https://github.com/ultralytics/yolov5)
 * HRNet: https://github.com/leoxiaobin/deep-high-resolution-net.pytorch
