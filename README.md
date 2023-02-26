@@ -22,7 +22,7 @@ python3 train.py --batch-size=8 --optimizer='Adam' --weights='./yolov5m.pt' --hy
 ```
 
 ### Testing on RumenWeeds dataset
-please put trained model under `./saved_model` folder
+please put the trained model named `best.pt` under `./saved_model` folder
 ```
 python3 Test.py --roi_output_size=16
 ```
