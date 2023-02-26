@@ -32,5 +32,5 @@ You can download trained model for YOLO-HRNet via https://drive.google.com/drive
 `To Do`
 
 # Code References
-* [YOLOv5](https://github.com/ultralytics/yolov5)
-* [HRNet](https://github.com/leoxiaobin/deep-high-resolution-net.pytorch)
+* [YOLOv5 offical repository](https://github.com/ultralytics/yolov5)
+* [HRNet offical repository](https://github.com/leoxiaobin/deep-high-resolution-net.pytorch)
