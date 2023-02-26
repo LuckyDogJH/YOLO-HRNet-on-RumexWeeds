@@ -3,3 +3,6 @@ This is the repository of YOLO-HRNet single-class implementation on RumexWeeds D
 
 # Usage
 ## Environment
+* Python >= 3.6
+* Pytorch >= 1.8.0
+* Detailed requirments are shown in `requirements.txt`
