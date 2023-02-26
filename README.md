@@ -34,4 +34,3 @@ You can download trained model from https://drive.google.com/drive/folders/1aLnN
 # Code References
 * YOLOv5: https://github.com/ultralytics/yolov5
 * HRNet: https://github.com/leoxiaobin/deep-high-resolution-net.pytorch
-* Mask R-CNN: https://github.com/LuckyDogJH/deep-learning-for-image-processing/tree/master/pytorch_object_detection/mask_rcnn
