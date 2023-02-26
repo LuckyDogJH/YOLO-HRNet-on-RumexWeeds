@@ -1,0 +1,52 @@
+# YOLOv5 🚀 by Ultralytics, GPL-3.0 license
+
+# Parameters
+nc: 80  # number of classes
+depth_multiple: 0.33  # model depth multiple, is used to multiply "numbers" in backbone and head below.
+width_multiple: 0.50  # layer channel multiple, is used to multiply "channels" in backbone and head 'args' below
+anchors:
+  - [10,13, 16,30, 33,23]  # P3/8        P3: 指有PAN生成的Image pyramid（即最终用于detetc的feature map）中的第3层
+  - [30,61, 62,45, 59,119]  # P4/16      定义了3个anchor， 30*61， 62*45， 59*119
+  - [116,90, 156,198, 373,326]  # P5/32  feature map尺寸越小，感受野越大 -> 检测大目标； feature map 尺寸越大，感受野越小 -> 检测小目标
+
+# YOLOv5 v6.0 backbone
+backbone:
+  # [from, number, module, args]
+  # from: where is the input of current layer from. -1: represents from pre_layer
+  # number: how many modules in this layer, in application, we use (number * depth_multiple)
+  # module: the module utilized in this layer
+  # args: parameters info
+  [[-1, 1, Conv, [64, 6, 2, 2]],  # 0-P1/2, P1: 指backbone产生的Image pyramid中的第一层(最下面的那个feature map)； 2： 指当前feature map 相比于原图缩小了 2 倍
+   [-1, 1, Conv, [128, 3, 2]],  # 1-P2/4，  p2: 指backbone产生的Image pyramid中第二层； 4： 相比于原图缩小了4倍
+   [-1, 3, C3, [128]],
+   [-1, 1, Conv, [256, 3, 2]],  # 3-P3/8
+   [-1, 6, C3, [256]],
+   [-1, 1, Conv, [512, 3, 2]],  # 5-P4/16
+   [-1, 9, C3, [512]],
+   [-1, 1, Conv, [1024, 3, 2]],  # 7-P5/32
+   [-1, 3, C3, [1024]],
+   [-1, 1, SPPF, [1024, 5]],  # 9
+  ]
+
+# YOLOv5 v6.0 head
+head:
+  [[-1, 1, Conv, [512, 1, 1]],
+   [-1, 1, nn.Upsample, [None, 2, 'nearest']],
+   [[-1, 6], 1, Concat, [1]],  # cat backbone P4   [-1, 6]: represents the input is from pre_layer(12th) and 6th layer
+   [-1, 3, C3, [512, False]],  # 13
+
+   [-1, 1, Conv, [256, 1, 1]],
+   [-1, 1, nn.Upsample, [None, 2, 'nearest']],
+   [[-1, 4], 1, Concat, [1]],  # cat backbone P3
+   [-1, 3, C3, [256, False]],  # 17 (P3/8-small)， detect small object
+
+   [-1, 1, Conv, [256, 3, 2]],
+   [[-1, 14], 1, Concat, [1]],  # cat head P4
+   [-1, 3, C3, [512, False]],  # 20 (P4/16-medium), detect medium object
+
+   [-1, 1, Conv, [512, 3, 2]],
+   [[-1, 10], 1, Concat, [1]],  # cat head P5
+   [-1, 3, C3, [1024, False]],  # 23 (P5/32-large), detect large object
+
+   [[17, 20, 23], 1, Detect, [nc, anchors]],  # Detect(P3, P4, P5)
+  ]
