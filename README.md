@@ -9,9 +9,9 @@ This is the repository of YOLO-HRNet single-class implementation on RumexWeeds D
 * Detailed requirments are shown in `requirements.txt`
 
 ## Data preparation
-For RumexWeeds data, please download from `to do`. We use \$your\_data\_path\$ to denote your saved data path. The original annotations are saved in xml format. We need to convert them into txt format. Please run
+For RumexWeeds data, please download from `to do`. We use \$your-data-path\$ to denote your saved data path. The original annotations are saved in xml format. We need to convert them into txt format. Please run
 ```
-python3 convert_XML_to_COCO_in_YOLO.py --root=$your_data_path$ --target_dir='../RumexWeeds_root_YOLOtxt'
+python3 convert_XML_to_COCO_in_YOLO.py --root=$your-data-path$ --target_dir='../RumexWeeds_root_YOLOtxt'
 ```
 Please also change the train/val/test dataset info in `DataInfo.yaml`
 
