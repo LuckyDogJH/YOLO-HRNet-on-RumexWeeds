@@ -26,7 +26,7 @@ please put the trained model named `best.pt` under `./saved_model` folder
 ```
 python3 Test.py --roi_output_size=16
 ```
-You can download trained model for YOLO-HRNet via https://drive.google.com/drive/folders/144TTUVqCjLRmz0EYV64TO4iKM7Ny3hBi?usp=share_link
+You can download trained model for YOLO-HRNet via https://drive.google.com/drive/folders/1aLnNtIUV9C_HlPrJbyoQm6jGlTiPHmgW?usp=share_link
 
 # Results Visualization
 `To Do`
