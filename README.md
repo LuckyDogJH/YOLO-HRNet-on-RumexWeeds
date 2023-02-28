@@ -30,6 +30,7 @@ You can download trained model for YOLO-HRNet via https://drive.google.com/drive
 
 # Results Visualization
 ![P_C.jpg](P_C.jpg)
+Link to [YOLO-Pose](https://github.com/LuckyDogJH/YOLO-Pose-on-RumexWeeds)
 
 # Code References
 * [YOLOv5 offical repository](https://github.com/ultralytics/yolov5)
