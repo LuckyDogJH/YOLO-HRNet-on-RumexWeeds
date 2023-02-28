@@ -29,7 +29,7 @@ python3 Test.py --roi_output_size=16
 You can download trained model for YOLO-HRNet via https://drive.google.com/drive/folders/1aLnNtIUV9C_HlPrJbyoQm6jGlTiPHmgW?usp=share_link
 
 # Results Visualization
-`To Do`
+![Predictions comparison.jpg](Predictions comparison.jpg)
 
 # Code References
 * [YOLOv5 offical repository](https://github.com/ultralytics/yolov5)
